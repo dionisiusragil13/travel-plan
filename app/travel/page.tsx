@@ -1,5 +1,12 @@
+import Footer from "@/components/footer";
+
 export default function Travel() {
-  return <div className="flex min-h-screen flex-col bg-white">
-    <div className="content-center">test</div>
-  </div>;
+  return (
+    <main>
+      <div className="min-h-screen px-10">
+        <h1>Fill the question</h1>
+      </div>
+      <Footer/>
+    </main>
+  )
 }
