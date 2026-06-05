@@ -1,12 +1,32 @@
+"use client";
+
+import { useState } from "react";
 import Footer from "@/components/footer";
+import StepperVerticalScrollTrackDemo from "@/components/shadcn-studio/stepper/stepper-12";
+import TripPlanResult from "@/components/trip-plan-result"; // Sesuaikan path komponen result kamu
 
 export default function Travel() {
+  // State untuk menyimpan hasil plan perjalanan
+  const [tripData, setTripData] = useState<any | null>(null);
+
   return (
-    <main>
-      <div className="min-h-screen px-10">
-        <h1>Fill the question</h1>
+    <>
+      <div className="min-h-screen px-10 pt-10 flex flex-col items-center">
+        <h1 className="font-bold text-4xl pb-10">Fill The Question</h1>
+
+        {/* Berikan prop onSuccess ke stepper */}
+        <StepperVerticalScrollTrackDemo
+          onSuccess={(data) => setTripData(data)}
+        />
+
+        {/* Komponen result hanya akan muncul/dipanggil jika tripData sudah ada */}
+        {tripData && (
+          <div className="w-full max-w-4xl mt-16 border-t pt-10">
+            <TripPlanResult data={tripData} />
+          </div>
+        )}
       </div>
-      <Footer/>
-    </main>
-  )
+      <Footer />
+    </>
+  );
 }

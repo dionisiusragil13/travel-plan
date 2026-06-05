@@ -14,21 +14,60 @@ export const generateTripPlan = async ({
   const prompt = `
 Kamu adalah travel planner profesional.
 
-Buatkan rencana perjalanan (itinerary) detail untuk liburan ke ${destination}.
-Durasi: ${duration} hari.
-Budget: Rp${budget}.
-Preferensi: ${preference}.
-jumlah orang: ${group}.
-tipe traveling:${style}
+Buatkan rencana perjalanan ke ${destination}.
 
-Aturan:
-- Gunakan bahasa Indonesia
-- Jawaban rapi dan mudah dibaca
-- Sertakan:
-  - Itinerary per hari
-  - Rekomendasi tempat makan
-  - Estimasi biaya per hari
-  - Tips perjalanan singkat
+Data perjalanan:
+- Durasi: ${duration} hari
+- Budget: Rp${budget}
+- Preferensi: ${preference}
+- Jumlah orang: ${group}
+- Tipe traveling: ${style}
+
+PENTING:
+Kembalikan HANYA JSON valid.
+Jangan gunakan markdown.
+Jangan gunakan \`\`\`json.
+Jangan tambahkan penjelasan sebelum atau sesudah JSON.
+
+Format JSON:
+
+{
+  "summary": {
+    "destination": "string",
+    "duration": number,
+    "budget": number,
+    "style": "string",
+    "group": number
+  },
+  "budgetBreakdown": {
+    "accommodation": number,
+    "food": number,
+    "transportation": number,
+    "attractions": number,
+    "other": number
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "string",
+      "activities": [
+        {
+          "time": "09:00",
+          "activity": "string",
+          "location": "string",
+          "estimatedCost": number
+        }
+      ],
+      "recommendedFood": [
+        "string"
+      ],
+      "dailyBudget": number
+    }
+  ],
+  "tips": [
+    "string"
+  ]
+}
 `;
   try {
     const response = await ai.models.generateContent({
