@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export async function login(email: string, password: string) {
   const user = await prisma.user.findUnique({ where: { email } });
@@ -11,5 +12,10 @@ export async function login(email: string, password: string) {
   if (!match) {
     throw new Error("wrong password");
   }
-  return user;
+  const token = jwt.sign(
+    { id: user.id, email: user.email },
+    process.env.JWT_SECRET!,
+    { expiresIn: "7d" }, // Token hangus dalam 7 hari
+  );
+  return {user,token};
 }

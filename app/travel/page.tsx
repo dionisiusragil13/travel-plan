@@ -4,6 +4,7 @@ import { useState } from "react";
 import Footer from "@/components/footer";
 import StepperVerticalScrollTrackDemo from "@/components/shadcn-studio/stepper/stepper-12";
 import TripPlanResult from "@/components/trip-plan-result"; // Sesuaikan path komponen result kamu
+import DownloadButton from "@/components/download-button";
 
 export default function Travel() {
   // State untuk menyimpan hasil plan perjalanan
@@ -18,11 +19,10 @@ export default function Travel() {
         <StepperVerticalScrollTrackDemo
           onSuccess={(data) => setTripData(data)}
         />
-
-        {/* Komponen result hanya akan muncul/dipanggil jika tripData sudah ada */}
         {tripData && (
           <div className="w-full max-w-4xl mt-16 border-t pt-10">
             <TripPlanResult data={tripData} />
+            <DownloadButton tripData={tripData} />
           </div>
         )}
       </div>
