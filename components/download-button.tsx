@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function DownloadButton({ tripData }: { tripData: any }) {
   const [downloading, setDownloading] = useState(false);
+  const router = useRouter();
 
   const handleDownload = async () => {
     setDownloading(true);
@@ -17,6 +19,12 @@ export default function DownloadButton({ tripData }: { tripData: any }) {
         body: JSON.stringify({ tripData }), // Kirim hasil ke server
       });
 
+      if (res.status == 401) {
+        toast.info("silahkan login terlebih dahulu untuk mengunduh PDF");
+        localStorage.setItem("pending_trip_data", JSON.stringify(tripData));
+        router.push("/login?callback=/travel&action=download");
+        return;
+      }
       // Di dalam file DownloadButton kamu, ganti bagian pengecekan res.ok menjadi seperti ini:
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));

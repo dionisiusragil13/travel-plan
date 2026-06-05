@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import {  useRouter, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,6 +25,7 @@ export function LoginForm({
   ...props
 }: React.ComponentProps<"div">) {
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   // 1. Buat state untuk menampung input & status login
   const [email, setEmail] = useState("");
@@ -50,7 +51,13 @@ export function LoginForm({
         throw new Error(data.message || "Terjadi kesalahan saat mendaftar.");
       }
       toast.success("Login berhasil!", {});
-      window.location.href = "/";
+      const callback = searchParams.get("callback");
+      const action = searchParams.get("action");
+      if (callback) {
+        window.location.href = `${callback}?action=${action}`;
+      } else {
+        window.location.href = "/";
+      }
     } catch (err: any) {
       setError(err.message);
     } finally {

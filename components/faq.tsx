@@ -2,9 +2,15 @@ import {
   CircleDollarSign,
   Clock,
   Package,
+  Download,
   PackageX,
   Plane,
+  Sparkles,
   Waypoints,
+  UserCheck,
+  Sliders,
+  Coins,
+  Compass,
 } from "lucide-react";
 import {
   Accordion,
@@ -15,39 +21,39 @@ import {
 
 const faqs = [
   {
-    question: "What is your return policy?",
+    question: "How does the AI travel planner work?",
     answer:
-      "We offer a 30-day return policy on all unused products. Please ensure the item is in original packaging when returning.",
-    icon: Package,
+      "Our AI analyzes your travel preferences such as destination, duration, budget, and activities and instantly generates a customized, comprehensive day-by-day itinerary tailored just for you.",
+    icon: Sparkles,
   },
   {
-    question: "How long does shipping take?",
+    question: "Can I download my travel plan as a PDF?",
     answer:
-      "Shipping typically takes 3-7 business days depending on your location.",
-    icon: Clock,
+      "Yes, absolutely! Once the AI generates your itinerary, you can easily download it as a beautifully formatted PDF to keep it accessible offline during your trip.",
+    icon: Download,
   },
   {
-    question: "Do you ship internationally?",
+    question: "Do I need an account to create a travel plan?",
     answer:
-      "Yes, we ship to most countries worldwide. Shipping fees and delivery times vary by destination.",
-    icon: Plane,
+      "You can try out the AI planner and generate your itinerary for free without signing up. However, you will need to create a free account or log in to download the final PDF version.",
+    icon: UserCheck,
   },
   {
-    question: "How can I track my order?",
+    question: "Can I customize the itinerary after it is generated?",
     answer:
-      "After your order is shipped, you'll receive an email with a tracking link. You can also track your order in your account dashboard.",
-    icon: Waypoints,
+      "Yes! The initial generation is just the starting point. You can easily adjust your preferences, regenerate specific days, or swap out activities until the plan fits your needs perfectly.",
+    icon: Sliders,
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, UPI, and net banking.",
-    icon: CircleDollarSign,
+    question: "Is this service free to use?",
+    answer: "Generating your travel plans on our website is completely free. We offer core planning features and standard PDF downloads at zero cost to help you get ready for your next adventure.",
+    icon: Coins,
   },
   {
-    question: "Can I cancel or change my order?",
+    question: "Does the AI support international travel destinations?",
     answer:
-      "Yes, you can cancel or modify your order within 2 hours of placing it. After that, the order may already be processed for shipment.",
-    icon: PackageX,
+      "Yes! Our AI planner is powered by global travel data, meaning you can plan trips for thousands of cities and hidden gems all around the world, whether it's a local weekend getaway or an international vacation.",
+    icon: Compass,
   },
 ];
 

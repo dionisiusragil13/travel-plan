@@ -26,7 +26,7 @@ export function HeroSection1() {
             <Link href="/travel">
               <Button className="bg-blue-900">Get started</Button>
             </Link>
-            <Link href="/services">
+            <Link href="#">
               <Button variant="secondary">Learn more</Button>
             </Link>
           </div>

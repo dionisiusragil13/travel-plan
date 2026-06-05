@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import Footer from "@/components/footer";
 import StepperVerticalScrollTrackDemo from "@/components/shadcn-studio/stepper/stepper-12";
 import TripPlanResult from "@/components/trip-plan-result"; // Sesuaikan path komponen result kamu
@@ -9,6 +10,21 @@ import DownloadButton from "@/components/download-button";
 export default function Travel() {
   // State untuk menyimpan hasil plan perjalanan
   const [tripData, setTripData] = useState<any | null>(null);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const action = searchParams.get("action");
+
+  useEffect(() => {
+    const savedData = localStorage.getItem("pending_trip_data");
+    if (savedData) {
+      const parsedData = JSON.parse(savedData);
+      setTripData(parsedData);
+    }
+    if (action === "download") {
+      localStorage.removeItem("pending_trip_data");
+      router.replace("/travel");
+    }
+  }, [action, router]);
 
   return (
     <>
