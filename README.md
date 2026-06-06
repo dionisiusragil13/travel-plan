@@ -98,4 +98,8 @@ The repository is organized as follows:
 -   `lib/`: Utility functions, Prisma client instance, and authentication logic.
 -   `prisma/`: Prisma schema definition (`schema.prisma`) and migrations.
 -   `service/`: Services that interact with external APIs, such as the Gemini service.
+<<<<<<< HEAD
 -   `public/`: Static assets, including images.
+=======
+-   `public/`: Static assets, including images.
+>>>>>>> f6885eb8032e373aa0eaf85747404dfbd41d6b99
