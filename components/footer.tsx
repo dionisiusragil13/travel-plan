@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="flex flex-col items-center justify-between gap-4 px-2 pt-3 pb-5 sm:flex-row">
           <Link className="flex items-center gap-2" href="/">
             <Wheat />
-            <span className="font-medium text-xl">Bloxxee</span>
+            <span className="font-medium text-xl">Itinera.ai</span>
           </Link>
 
           <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-medium text-sm">
@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col-reverse items-center justify-between gap-4 px-2 pt-4 pb-2 sm:flex-row">
           <p className="font-medium text-muted-foreground text-sm">
-            Copyright &copy; {new Date().getFullYear()} Bloxxee. All rights
+            Copyright &copy; {new Date().getFullYear()} Itinera.ai All rights
             reserved.
           </p>
 

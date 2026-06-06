@@ -3,45 +3,45 @@ import { Separator } from "@/components/ui/separator";
 const testimonials = [
   {
     name: "Sarah Johnson",
-    role: "Product Designer at Canva",
+    role: "Solo Backpacker & Travel Blogger",
     avatar: "https://mockmind-api.uifaces.co/content/human/97.jpg",
     testimonial:
-      "This product completely changed the way I work. The interface is intuitive and the performance is top-notch.",
+      "This AI completely changed the way I solo travel. I just typed my random preferences, and it discovered hidden gems in Kyoto that I couldn’t find anywhere on Google. Absolutely love it!",
   },
   {
     name: "Raj Mehta",
-    role: "Frontend Developer at Zomato",
+    role: "Father of Two",
     avatar: "https://mockmind-api.uifaces.co/content/human/80.jpg",
     testimonial:
-      "It’s rare to find a tool that blends design and usability so well. Highly recommend it to all developers!",
+      "Planning a 5-day family trip used to take me weeks of stress. Itinera did it flawlessly in 30 seconds, optimized our budget, and kept my kids entertained with perfect activity pacing."
   },
   {
     name: "Emily Chen",
-    role: "Marketing Manager at HubSpot",
+    role: "Digital Nomad",
     avatar: "https://mockmind-api.uifaces.co/content/human/113.jpg",
     testimonial:
-      "The experience has been seamless from day one. Great support, fast delivery, and amazing value.",
+      "The UX is incredibly seamless. I usually hate rigid itineraries, but the ability to quickly regenerate specific days while keeping my download offline-ready via PDF is a total lifesaver."
   },
   {
     name: "Daniel Kim",
-    role: "CTO at NextLaunch",
+    role: "Remote Software Engineer",
     avatar: "https://mockmind-api.uifaces.co/content/human/90.jpg",
     testimonial:
-      "We integrated this solution into our workflow and saw an instant boost in productivity and collaboration.",
+      "I've tried multiple travel planners, but none match the speed and precision of this AI. The route optimization is brilliant—it actually groups places by distance so you don't waste time in traffic."
   },
   {
     name: "Aisha Patel",
-    role: "Software Engineer at Swiggy",
+    role: "Weekend Explorer",
     avatar: "https://mockmind-api.uifaces.co/content/human/116.jpg",
     testimonial:
-      "I've used several tools in this category, but nothing matches the polish and reliability of this one.",
+      "As someone with a hectic corporate job, I only have weekends to escape. This tool cuts down my research time to zero, allowing me to just generate a plan, pack my bags, and enjoy."
   },
   {
     name: "Liam Garcia",
-    role: "Startup Founder",
+    role: "Lifestyle Content Creator",
     avatar: "https://mockmind-api.uifaces.co/content/human/112.jpg",
     testimonial:
-      "As a founder, I care about speed and simplicity. This product delivers on both fronts beautifully.",
+      "Beautiful aesthetics paired with robust AI capabilities. It beautifully balances standard tourist hotspots with authentic local experiences. Highly recommend it to anyone who loves traveling!"
   },
 ];
 

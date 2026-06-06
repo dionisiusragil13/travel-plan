@@ -1,12 +1,10 @@
-import Footer from "@/components/footer";
+import { Suspense } from "react";
+import TravelContent from "./travel-content";
 
-export default function Travel() {
+export default function TravelPage() {
   return (
-    <main>
-      <div className="min-h-screen px-10">
-        <h1>Fill the question</h1>
-      </div>
-      <Footer/>
-    </main>
-  )
+    <Suspense fallback={<div>Loading...</div>}>
+      <TravelContent />
+    </Suspense>
+  );
 }
