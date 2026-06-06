@@ -40,6 +40,7 @@ export function HeroSection1() {
               fill
               priority
               className="h-full w-full rounded-xl object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </AspectRatio>
         </div>
