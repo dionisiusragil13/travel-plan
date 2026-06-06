@@ -35,7 +35,7 @@ export function HeroSection1() {
         <div className="w-full flex-1">
           <AspectRatio ratio={1 / 1}>
             <Image
-              src="/world-bro.png"
+              src="/World-bro.png"
               alt="Hero section visual"
               fill
               priority
