@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from "next/image";
 import Link from "next/link";
+import { heroImage } from "@/public";
 
 export function HeroSection1() {
   return (
@@ -32,7 +33,7 @@ export function HeroSection1() {
         <div className="w-full flex-1">
           <AspectRatio ratio={1 / 1}>
             <Image
-              src="/world_bro.png"
+              src={heroImage}
               alt="Hero section visual"
               fill
               priority
